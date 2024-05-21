@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex bg-coolMint rounded-xl flex-col gap-4 text-primary text-center items-center justify-between px-16 py-4"  >
             <Image src={'/icons/patient.svg'} alt="" width={100} height={10} className="object-contain" loading={"lazy"}/>
             <h2 className="text-xl font-medium">Patient</h2>
-            <Link href={'/user'} className="bg-primary px-8 py-4 text-white rounded-xl hover:opacity-90">Sign-in</Link>
+            <Link href={'/user/login'} className="bg-primary px-8 py-4 text-white rounded-xl hover:opacity-90">Sign-in</Link>
           </div>
 
           <div className="flex bg-coolMint rounded-xl flex-col gap-4 text-primary text-center items-center justify-between px-16 py-4"  >
