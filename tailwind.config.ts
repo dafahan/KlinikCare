@@ -13,6 +13,8 @@ const config: Config = {
         secondary: '#135D66',
         tertiary : '#77B0AA',
         accent : '#E3FEF7',
+        coolMint: '#EBF3F2',
+        whiteSmoke : '#F3F3F3',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -24,3 +26,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+  
