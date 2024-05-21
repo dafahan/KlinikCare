@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex w-full h-full px-16 lg:px-28   flex-col items-center gap-8 pt-24">
             <div className="flex w-full lg:w-2/3   justify-between">
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-black text-6xl">Sign In</h1>
+                    <h1 className="text-black text-6xl">Sign Up</h1>
                     <h1 className="text-black text-2xl">Welcome to Klinik UNILA </h1>
                 </div>
                 <Link href={'/admin'} className="text-white bg-tertiary px-6 py-4 text-2xl flex h-fit mt-4 rounded-xl">Sign Up</Link>
@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-between text-xl">
                     <button className="bg-tertiary px-8 py-2 text-xl text-white rounded-lg">Submit</button>
-                    <p>Already have an account? <Link href={'/'} className="text-[#77B0AA]">Login</Link></p>
+                    <p>Already have an account? <Link href={'/user/login'} className="text-[#77B0AA]">Login</Link></p>
                 </div>
 
             </div>
