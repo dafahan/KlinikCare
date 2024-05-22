@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .rounded-ellipse {
+    border-radius: 4500px / 500px;
+  }
+}
 body {
   font-family: Helvetica, sans-serif;
 }

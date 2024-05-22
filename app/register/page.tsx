@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [successRegist,setSuccessRegist] = useState(0)
-    const [nextForm,updateNextForm] = useState(0)
+    const [nextForm,updateNextForm] = useState(1)
   return (
     <div className={`flex min-h-[calc(100vh-1.5rem-2rem)] w-full bg-white justify-start items-center py-8 relative flex-col`}>
         {successRegist && (
@@ -52,7 +52,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center justify-between text-md">
-                    <button className="bg-tertiary px-4 py-1 text-xl text-white rounded-lg" onClick={()=>updateNextForm(1)}>Submit</button>
+                    <button className="bg-tertiary px-4 py-1 text-xl text-white rounded-lg" onClick={()=>updateNextForm(0)}>Next</button>
                     <p>Already have an account? <Link href={'/login'} className="text-[#77B0AA]">Login</Link></p>
                 </div>
 
@@ -107,7 +107,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex items-center justify-start text-md">
-                        <button className="bg-tertiary px-4 py-1 text-xl text-white rounded-lg hover:opacity-60" >Submit</button>
+                        <button className="bg-tertiary px-4 py-1 text-xl text-white rounded-lg hover:opacity-60" onClick={()=>setSuccessRegist(1)}>Submit</button>
 
                     </div>
                 </div>
