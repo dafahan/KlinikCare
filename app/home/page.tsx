@@ -1,7 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
+import { getUsers } from "../lib/data"
 
-const page = () => {
+
+const page =async () => {
+  const users = await getUsers();
+
   return (
     
     <div className="flex w-full bg-white justify-start items-center relative flex-col relative">

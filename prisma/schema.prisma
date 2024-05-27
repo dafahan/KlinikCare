@@ -9,10 +9,17 @@
     directUrl = env("POSTGRES_URL_NON_POOLING") 
   }
 
-  model User{
-    id String @id @default(cuid())
-    username String
-    password String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  model User {
+    id                    String   @id @default(cuid())
+    username              String   @unique
+    password              String  
+    email                 String
+    phone                 String
+    name                  String
+    gender                String
+    bpjs                  String?  // Optional field
+    birthDate             DateTime
+    address               String
+    createdAt             DateTime @default(now())
+    updatedAt             DateTime @updatedAt
   }
