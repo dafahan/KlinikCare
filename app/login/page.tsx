@@ -7,30 +7,7 @@ export default function Home() {
   const [username,usernameupdate] = useState('');
   const [password,passwordupdate] = useState('');
   const proceedLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log(1);
-    e.preventDefault();
-    if (validate()) {
-      fetch(`http://localhost:5000/user?username=${username}`)
-        .then((res) => res.json())
-        .then((resp) => {
-            console.log(resp[0].password)
-          if (Object.keys(resp).length === 0) {
-            
-          } else {
-            if (resp[0].password === password) {
-              
-              sessionStorage.setItem('username', username);
-              alert('login success');
-              window.location.href = '/user/dashboard'
-            } else {
-                alert('wrong password');
-            }
-          }
-        })
-        .catch((err) => {
-         
-        });
-    }
+   
   };
 
  

@@ -4,7 +4,7 @@
 
 @layer utilities {
   .rounded-ellipse {
-    border-radius: 4500px / 500px;
+    border-radius: 10500px / 500px;
   }
 }
 body {
