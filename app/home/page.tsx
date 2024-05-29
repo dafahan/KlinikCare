@@ -1,14 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { getUsers } from "../lib/data"
-import ScheduleTable from "../components/ScheduleTable"
 
 const page =async () => {
   const users = await getUsers();
 
   return (
-    
-    <div className="flex w-full bg-white justify-start items-center relative flex-col relative">
+    <div className="flex w-full bg-white justify-start items-center relative flex-col">
         <div className="flex h-[calc(100vh-1.5rem-2rem)] w-full before:absolute before:content-[''] relative before:w-full before:h-full before:bg-opacity-50 bg-[url('/images/klinikunila.svg')] bg-cover ">
           <div className="flex w-full h-full items-start justify-start flex-col lg:px-44 py-24">
             <h1 className="text-white text-4xl font-bold leading-relaxed">MAKE YOUR <br/>APPOINTMENT NOW!</h1>
@@ -33,10 +31,17 @@ const page =async () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col items-center justify-center gap-8 absolute px-12 bottom-8">
+              <Image src={"/images/logoKlinik.svg"} width={150} height={150} className="object-contain" alt=""></Image>
+              <h1 className="font-bold text-3xl">WHO WE SERVE</h1>
+              <Image src={"images/group33.svg"} width={100} height={100} className="object-contain w-full" alt=""></Image>
+            </div>
         </div>
-        <div className="flex w-full h-screen bg-[url('/images/locationKlinik.svg')] bg-cover bg-center bg-no-repeat" >
-          <ScheduleTable></ScheduleTable>
+        <div className="flex bg-[url('/images/locationKlinik.svg')] w-full h-[87vh] bg-center bg-cover relatibe">
+          <Image src={"/images/group34.svg"} width={100} height={100} className="object-contain w-1/2 relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt=""></Image>
+          <Link href={"https://maps.app.goo.gl/Xw23QcX2wpJahT8u8"} className="text-white bg-black px-6 py-2 rounded-lg h-fit absolute left-[49%] transform -translate-x-1/2 bottom-40">VIEW CLINIC LOCATION</Link>
         </div>
+
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { getSchedule } from "../lib/data";
 
 const ScheduleTable = async () => {
           const schedule = await getSchedule();
+          console.log(schedule)
           return (
                     <table className="w-full text-left text-gray-500">
                               <thead className="text-sm text-gray-700 uppercase bg-gray-50">
