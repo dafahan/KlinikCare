@@ -24,9 +24,9 @@
     updatedAt             DateTime @updatedAt
   }
 
-  model schedule (
+  model Schedule {
     id String @id @default(cuid())
     availability String 
     day String
     time String
-  )
+  }

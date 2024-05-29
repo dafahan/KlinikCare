@@ -34,7 +34,7 @@ const page =async () => {
               </div>
             </div>
         </div>
-        <div className="flex h-screen bg-[url('/images/locationKlinik.svg')] bg-cover bg-center bg-no-repeat"></div>
+        <div className="flex w-full h-screen bg-[url('/images/locationKlinik.svg')] bg-cover bg-center bg-no-repeat" ></div>
     </div>
   )
 }
