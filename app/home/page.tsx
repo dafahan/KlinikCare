@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { getUsers } from "../lib/data"
-
+import ScheduleTable from "../components/ScheduleTable"
 
 const page =async () => {
   const users = await getUsers();
@@ -34,7 +34,9 @@ const page =async () => {
               </div>
             </div>
         </div>
-        <div className="flex w-full h-screen bg-[url('/images/locationKlinik.svg')] bg-cover bg-center bg-no-repeat" ></div>
+        <div className="flex w-full h-screen bg-[url('/images/locationKlinik.svg')] bg-cover bg-center bg-no-repeat" >
+          <ScheduleTable></ScheduleTable>
+        </div>
     </div>
   )
 }
