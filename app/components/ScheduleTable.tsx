@@ -12,7 +12,7 @@ const ScheduleTable = async () => {
                                         </tr>
                               </thead>
                               <tbody>
-                                        {schedule.map((schedule:string, index:any) => (
+                                        {schedule.map((schedule, index:number) => (
                                                   <tr key={schedule.id} className="bg-white border-b">
                                                   <td className="py-3 px-6">{schedule.availability}</td>
                                                   <td className="py-3 px-6">{schedule.day}</td>

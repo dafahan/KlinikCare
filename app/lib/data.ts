@@ -12,8 +12,8 @@ export const getUsers = async()=>{
 
 export const getSchedule = async()=>{
   try{
-      const users = await prisma.user.findMany();
-      return users;
+      const schedules = await prisma.schedule.findMany();
+      return schedules;
   }catch(error){
       throw new Error("Failed to fetch users data");
   }
