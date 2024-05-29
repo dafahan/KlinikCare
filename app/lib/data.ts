@@ -9,6 +9,16 @@ export const getUsers = async()=>{
         throw new Error("Failed to fetch users data");
     }
 }
+
+export const getSchedule = async()=>{
+  try{
+      const users = await prisma.user.findMany();
+      return users;
+  }catch(error){
+      throw new Error("Failed to fetch users data");
+  }
+}
+
 export const login = async (username:string, password:string) => {
     try {
         const user = await prisma.user.findUnique({
