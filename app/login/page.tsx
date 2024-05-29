@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -9,11 +9,15 @@ export default function Home() {
   const [password, passwordUpdate] = useState('');
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-
+  useEffect(() => {
+    if (isUserLoggedIn()) {
+      router.push('/home');
+    }
+  }, []);
   const proceedLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-
+  
     if (validate()) {
       try {
         const response = await fetch('/api/login', {
@@ -23,11 +27,12 @@ export default function Home() {
           },
           body: JSON.stringify({ username, password }),
         });
-
+  
         const data = await response.json();
         if (response.ok) {
           console.log(data.message);
-          router.push('/dashboard'); // Replace with your desired route
+          localStorage.setItem('sessionToken', data.token);
+          router.push('/home'); 
         } else {
           setError(data.message);
         }
@@ -37,6 +42,11 @@ export default function Home() {
     } else {
       setError('Please fill in all fields');
     }
+  };
+
+  const isUserLoggedIn = () => {
+    const token = localStorage.getItem('sessionToken');
+    return !!token;
   };
 
   const validate = () => {

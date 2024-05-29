@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { useRouter } from "next/navigation";
 
 
@@ -18,6 +18,11 @@ export default function Home() {
     const [birthDate, birthDateUpdate] = useState('');
     const [address, addressUpdate] = useState('');
 
+    useEffect(() => {
+        if (isUserLoggedIn()) {
+          router.push('/home');
+        }
+      }, []);
     const proceedRegist = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError(null);
@@ -51,6 +56,11 @@ export default function Home() {
         const allFieldsNotEmpty = requiredFields.every(field => field.trim() !== '');
         return allFieldsNotEmpty;
     };
+    const isUserLoggedIn = () => {
+        const token = localStorage.getItem('sessionToken');
+        return !!token;
+      };
+    
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
 

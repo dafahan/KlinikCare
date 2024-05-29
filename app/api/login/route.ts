@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   try {
     const isAuthenticated = await login(username, password);
     if (isAuthenticated) {
-      return NextResponse.json({ message: 'Login successful' });
+      return NextResponse.json({ message: 'Login successful' ,token:username});
     } else {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
